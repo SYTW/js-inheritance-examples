@@ -25,7 +25,7 @@ La herencia se establece via `Object.create`:
 
 ECMAScript 5 define un metodo, `Object.create()`, que crea un nuevo objeto
 usando su primer argumento como prototype de ese objeto. 
-`Object.create(a)` puede tomar un segundo argumento que, si se pasa,
+`Object.create()` puede tomar un segundo argumento que, si se pasa,
 describe las propiedades del nuevo objeto. 
 
 
