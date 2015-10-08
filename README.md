@@ -1,4 +1,5 @@
 En este repo se muestran algunos ejemplos de como definir herencia en JavaScript.
+En esta rama `module` los dos ejemplos se han convertido a módulos.
 
 * En el ejemplo `carsinheritance.js` (Véase [este Gist](https://gist.github.com/karanth/8358038)) se usa una clase `Cars` y una clase `Sedan`.
 
