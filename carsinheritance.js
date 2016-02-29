@@ -13,31 +13,27 @@ function Car(numberOfCylinders, carType){
   this.color = 'White';
   this.sunRoof = false;
   this.factor = 1;
-
-
 }
 
-
-  //Shared method
+//Shared method
 Car.prototype.start = function(){
-                  console.log('The car with ' + this.getCC() + ' engine and color ' + this.color + ' is starting...');
-              }
+  console.log('The car with ' + this.getCC() + 
+              ' engine and color ' + this.color + ' is starting...');
+}
 
 Car.prototype.stop = function(){
-                  console.log('The car has stopped');
-                  }
-
-
+  console.log('The car has stopped');
+}
 
 function Sedan(numberOfCylinder, carType){
     //Calling the base constructor. All private vars and other properties are initialized. 
     Car.call(this, numberOfCylinder, carType);
     //Instance method. The first in the method resolution chain.
     this.start = function(){
-                     console.log('The Sedan with ' + this.getCC() + ' engine and color ' + this.color + ' is starting...');
-                 }
+      console.log('The Sedan with ' + this.getCC() + 
+                  ' engine and color ' + this.color + ' is starting...');
+   }
 }
-
 
 //Set the inheritance - this is the magic line
 Sedan.prototype = new Car();
