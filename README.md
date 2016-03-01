@@ -4,11 +4,14 @@ En este repo se muestran algunos ejemplos de como definir herencia en JavaScript
 
   Se establece la herencia de esta forma:
 
+```javascript
           Sedan.prototype = new Car();
           Sedan.prototype.constructor = Sedan;
+```
 
   Para llamar al constructor padre se usa `Car.call`:
 
+```javascript
           function Sedan(numberOfCylinder, carType){
               //Calling the base constructor. All private vars and other properties are initialized. 
               Car.call(this, numberOfCylinder, carType);
@@ -17,6 +20,7 @@ En este repo se muestran algunos ejemplos de como definir herencia en JavaScript
                                console.log('The Sedan with ' + this.getCC() + ' engine and color ' + this.color + ' is starting...');
                            }
           }
+```
 
     * JavaScript functions are objects and like all JavaScript objects, they have methods. 
     Two of these methods, `call()` and `apply()`, invoke the function indirectly. 
@@ -33,7 +37,9 @@ En este repo se muestran algunos ejemplos de como definir herencia en JavaScript
 * En el ejemplo `inh1.js` se establecen las clases `Shape` y `Rectangle`.
   La herencia se establece via `Object.create`:
 
+```javascript
           Rectangle.prototype = Object.create(Shape.prototype);
+```
 
     * ECMAScript 5 define un metodo, `Object.create()`, que crea un nuevo objeto
     usando su primer argumento como prototype de ese objeto. 
@@ -43,6 +49,8 @@ En este repo se muestran algunos ejemplos de como definir herencia en JavaScript
 
   Para llamar al constructor padre se usa `Shape.call`:
 
+```javascript
           function Rectangle() {
             Shape.call(this); //call super constructor.
           }
+```
