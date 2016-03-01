@@ -25,6 +25,8 @@ Car.prototype.stop = function(){
   console.log('The car has stopped');
 }
 
+Car.prototype.constructor = Car;
+
 function Sedan(numberOfCylinder, carType){
     //Calling the base constructor. All private vars and other properties are initialized. 
     Car.call(this, numberOfCylinder, carType);
