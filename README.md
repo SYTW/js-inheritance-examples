@@ -22,17 +22,17 @@ En este repo se muestran algunos ejemplos de como definir herencia en JavaScript
           }
 ```
 
-    * JavaScript functions are objects and like all JavaScript objects, they have methods. 
-    Two of these methods, `call()` and `apply()`, invoke the function indirectly. 
+* JavaScript functions are objects and like all JavaScript objects, they have methods. 
+Two of these methods, `call()` and `apply()`, invoke the function indirectly. 
 
-    * Both methods allow you to explicitly specify the `this` value for the invocation, 
-    which means you can invoke any function as a method of any object, 
-    even if it is not actually a method of that object. 
+* Both methods allow you to explicitly specify the `this` value for the invocation, 
+which means you can invoke any function as a method of any object, 
+even if it is not actually a method of that object. 
 
-    * Both methods also allow you to specify the arguments for the invocation. 
+* Both methods also allow you to specify the arguments for the invocation. 
 
-    * The `call()` method uses its own argument list as arguments to the function and the `apply()` 
-    method expects an array of values to be used as arguments. 
+* The `call()` method uses its own argument list as arguments to the function and the `apply()` 
+method expects an array of values to be used as arguments. 
 
 * En el ejemplo `inh1.js` se establecen las clases `Shape` y `Rectangle`.
   La herencia se establece via `Object.create`:
@@ -41,13 +41,13 @@ En este repo se muestran algunos ejemplos de como definir herencia en JavaScript
           Rectangle.prototype = Object.create(Shape.prototype);
 ```
 
-    * ECMAScript 5 define un metodo, `Object.create()`, que crea un nuevo objeto
-    usando su primer argumento como prototype de ese objeto. 
-    * `Object.create()` puede tomar un segundo argumento que, si se pasa,
-    describe las propiedades del nuevo objeto. 
+* ECMAScript 5 define un metodo, `Object.create()`, que crea un nuevo objeto
+usando su primer argumento como prototype de ese objeto. 
+* `Object.create()` puede tomar un segundo argumento que, si se pasa,
+describe las propiedades del nuevo objeto. 
 
 
-  Para llamar al constructor padre se usa `Shape.call`:
+Para llamar al constructor padre se usa `Shape.call`:
 
 ```javascript
           function Rectangle() {
