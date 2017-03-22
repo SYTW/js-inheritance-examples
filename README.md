@@ -1,4 +1,4 @@
-## ejemplos de Clases y Herencia en JS
+## Ejemplos de Clases y Herencia en JS
 
 En este repo se muestran algunos ejemplos de como definir herencia en JavaScript.
 
