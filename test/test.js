@@ -1,31 +1,21 @@
-var parser = require('../parser.js');
+// Testing TextCell ...
+/*
+var cell = new TextCell("no\nway");
+console.log(cell.heightProp);
+// → 2
+cell.heightProp = 100;
+console.log(cell.heightProp);    
+    
+*/
+var drawTable = require('../lyingouttable.js');
 
-describe("skipSpace", function() {
+describe("TextCell", function() {
   it("should skip prefix spaces", function() {
     parser.skipSpace("  # hehe\n a").should.equal('a');
   })
 });
 
-describe("parse", function() {
-  it("should parse numbers and leave rest", function() {
-    var value = { expr: { type: 'value', value: 1 }, rest: ' 1' }
-    parser.parseExpression('1 1').should.eql(value);
-  })
-  it("should parse strings and leave rest", function() {
-    var value = { expr: { type: 'value', value: 's' }, rest: ', ,' };
-    parser.parseExpression('"s", ,').should.eql(value);
-  })
-  it("should parse word not followed by '('", function() {
-    var value = { expr: { type: 'word', name: 'word' }, rest: ' ,' };
-    parser.parseExpression('word ,').should.eql(value);
-  })
-  it("should parse apply if word followed by '('", function() {
-    var value = { expr: { type: 'apply',
-      operator: { type: 'word', name: 'word' },
-    args: [ { type: 'word', name: 'a' } ] },
-    rest: 'r ' }
-    parser.parseExpression('word ( a ) r ').should.eql(value);
-  })
+  /*
   it("should parse apply with multiple arguments", function() {
     var value = 
       { expr: 
@@ -60,6 +50,7 @@ describe("parse", function() {
           rest: '' };
     parser.parseExpression('word (a , b ) (c, d)').should.eql(value);
   })
+  */
   it("should have syntax error if not valid", function() {
     (function(){parser.parseExpression('')}).should.throw("Not valid Egg expression!");
     (function(){parser.parseExpression('a(,')}).should.throw("Not valid Egg expression!");

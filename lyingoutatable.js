@@ -1,12 +1,9 @@
-var MOUNTAINS = [
-  {name: "Kilimanjaro\nMontaña mágica", height: 5895, country: "Tanzania"},
-  {name: "Everest", height: 8848, country: "Nepal\nPaís lejano"},
-  {name: "Mount Fuji", height: 3776, country: "Japan"},
-  {name: "Mont Blanc", height: 4808, country: "Italy/France"},
-  {name: "Vaalserberg", height: 323, country: "Netherlands"},
-  {name: "Denali", height: 6168, country: "United States"},
-  {name: "Popocatepetl", height: 5465, country: "Mexico"}
-];
+function repeat(string, times) {
+  var result = "";
+  for (var i = 0; i < times; i++)
+    result += string;
+  return result;
+}
 
 // UnderlinedCell Class
 function UnderlinedCell(inner) {
@@ -37,13 +34,6 @@ UnderlinedCell.prototype.draw = function(width, height) {
     .concat([repeat("-", width)]);
 };    
 // End UnderlinedCell    
-
-function repeat(string, times) {
-  var result = "";
-  for (var i = 0; i < times; i++)
-    result += string;
-  return result;
-}
 
 // TextCell Class
 function TextCell(text) {
@@ -91,17 +81,7 @@ Object.defineProperty(TextCell.prototype, "heightProp", {
 });
 // End TextCell
 
-// Testing TextCell ...
-var cell = new TextCell("no\nway");
-console.log(cell.heightProp);
-// → 2
-cell.heightProp = 100;
-console.log(cell.heightProp);    
-    
-    
-//if (typeof module != "undefined" && module.exports)
-//  module.exports = MOUNTAINS;
-
+//---------------------------------------------
 function rowHeights(rows) {
   return rows.map(function(row) {
     return row.reduce(function(max, cell) {
@@ -153,7 +133,11 @@ function drawTable(rows) {
   return rows.map(drawRow).join("\n");
 }    
     
-console.log(drawTable(dataTable(MOUNTAINS)));
-// → name         height country
+function drawIt(data) {
+  return drawTable(dataTable(data));
+}
+
+module.exports = drawIt;
+
     
    
