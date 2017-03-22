@@ -1,4 +1,8 @@
+## ejemplos de Clases y Herencia en JS
+
 En este repo se muestran algunos ejemplos de como definir herencia en JavaScript.
+
+### Ejemplo `carsinheritance.js`
 
 * En el ejemplo `carsinheritance.js` (Véase [este Gist](https://gist.github.com/karanth/8358038)) se usa una clase `Cars` y una clase `Sedan`.
 
@@ -34,6 +38,8 @@ even if it is not actually a method of that object.
 * The `call()` method uses its own argument list as arguments to the function and the `apply()` 
 method expects an array of values to be used as arguments. 
 
+### Ejemplo `inh1.js`
+
 * En el ejemplo `inh1.js` se establecen las clases `Shape` y `Rectangle`.
   La herencia se establece via `Object.create`:
 
@@ -54,3 +60,18 @@ Para llamar al constructor padre se usa `Shape.call`:
             Shape.call(this); //call super constructor.
           }
 ```
+
+### Ejemplo `lyingoutatable`
+
+Forman parte de este ejemplo los ficheros:
+
+```
+lyingoutatable.js  
+main-draw-table.js
+test/test.js
+mountains.json
+package.json
+```
+
+Este ejemplo se corresponde con la sección **Laying out a table**
+del capítulo 6 **[The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)** del libro **Eloquent javaScript**
