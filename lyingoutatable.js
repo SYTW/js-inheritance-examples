@@ -1,6 +1,6 @@
 var MOUNTAINS = [
-  {name: "Kilimanjaro", height: 5895, country: "Tanzania"},
-  {name: "Everest", height: 8848, country: "Nepal"},
+  {name: "Kilimanjaro\nMontaña mágica", height: 5895, country: "Tanzania"},
+  {name: "Everest", height: 8848, country: "Nepal\nPaís lejano"},
   {name: "Mount Fuji", height: 3776, country: "Japan"},
   {name: "Mont Blanc", height: 4808, country: "Italy/France"},
   {name: "Vaalserberg", height: 323, country: "Netherlands"},
@@ -8,20 +8,36 @@ var MOUNTAINS = [
   {name: "Popocatepetl", height: 5465, country: "Mexico"}
 ];
 
+// UnderlinedCell Class
 function UnderlinedCell(inner) {
   this.inner = inner;
 }
+/*
+minWidth() returns a number indicating this cell’s minimum width
+(in characters).
+*/
 UnderlinedCell.prototype.minWidth = function() {
   return this.inner.minWidth();
 };
+/*
+minHeight() returns a number indicating the minimum height this
+cell requires (in lines).
+*/
 UnderlinedCell.prototype.minHeight = function() {
   return this.inner.minHeight() + 1;
 };
+
+/*
+draw(width, height) returns an array of length height, which contains
+a series of strings that are each width characters wide. This
+represents the content of the cell.
+*/
 UnderlinedCell.prototype.draw = function(width, height) {
   return this.inner.draw(width, height - 1)
     .concat([repeat("-", width)]);
 };    
-    
+// End UnderlinedCell    
+
 function repeat(string, times) {
   var result = "";
   for (var i = 0; i < times; i++)
@@ -29,6 +45,7 @@ function repeat(string, times) {
   return result;
 }
 
+// TextCell Class
 function TextCell(text) {
   this.text = text.split("\n");
 }
@@ -48,13 +65,6 @@ TextCell.prototype.draw = function(width, height) {
   }
   return result;
 };    
-
-function repeat(string, times) {
-  var result = "";
-  for (var i = 0; i < times; i++)
-    result += string;
-  return result;
-}
 
 function TextCell(text) {
   this.text = text.split("\n");
@@ -79,7 +89,9 @@ TextCell.prototype.draw = function(width, height) {
 Object.defineProperty(TextCell.prototype, "heightProp", {
   get: function() { return this.text.length; }
 });
+// End TextCell
 
+// Testing TextCell ...
 var cell = new TextCell("no\nway");
 console.log(cell.heightProp);
 // → 2
