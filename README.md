@@ -66,11 +66,11 @@ Para llamar al constructor padre se usa `Shape.call`:
 Forman parte de este ejemplo los ficheros:
 
 ```
-lyingoutatable.js  
-main-draw-table.js
-test/test.js
-mountains.json
-package.json
+lyingoutatable.js   - La librería con las clases
+main-draw-table.jsa - Programa principal que usa la librería
+test/test.js        - pruebas en Mocha
+mountains.json      - Fichero de entrada
+package.json        - Dependencias
 ```
 
 Este ejemplo se corresponde con la sección **Laying out a table**
